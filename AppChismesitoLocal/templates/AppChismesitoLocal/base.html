@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicacion</title>
+</head>
+<body> 
+      <h2>inicio</h2>
+      <ul>
+        <li><a href={% url 'inicio' %}>inicio</a></li>
+        <li><a href={% url 'lista_publicaciones' %}>lista_publicaciones</a></li>
+
+        {% if request.user.is_authenticated %}
+        <li><a href={% url 'exit' %}>Salir</a></li> 
+        {% else%}
+        <li><a href={% url 'login' %}>ingresar</a></li>
+        {% endif%}
+
+      </ul>
+      {% block content%}  {% endblock%} 
+    
+</body>
+</html>
+
+
+   

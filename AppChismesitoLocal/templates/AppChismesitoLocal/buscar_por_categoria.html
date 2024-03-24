@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Chismes por Categoría</title>
+</head>
+<body>
+    <h1>Buscar Chismes por Categoría</h1>
+
+    {% if error %}
+        <p>{{ error }}</p>
+    {% else %}
+        <h2>Chismes en la categoría "{{ categoria }}"</h2>
+        <ul>
+            {% for chisme in chismes %}
+                <li>{{ chisme.titulo }}</li>
+                
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
